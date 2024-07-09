@@ -6,6 +6,7 @@ board=$(board_name)
 board_config_update
 
 case $board in
+abt,asr3000|\
 abt,asr3000-ubootmod)
 	ucidef_set_led_netdev "wan" "WAN" "green:wan" "eth1"
 	ucidef_set_led_netdev "wlan2g" "WLAN2G" "green:wlan2g" "phy0-ap0"
@@ -66,6 +67,9 @@ xiaomi,redmi-router-ax6000|\
 xiaomi,redmi-router-ax6000-stock|\
 xiaomi,redmi-router-ax6000-ubootmod)
 	ucidef_set_led_netdev "wan" "wan" "rgb:network" "wan" "link"
+	;;
+zbtlink,zbt-z8103ax)
+	ucidef_set_led_netdev "wan" "wan" "green:wan" "eth1" "link tx rx"
 	;;
 zyxel_ex5601-t0-stock|\
 zyxel,ex5601-t0-ubootmod)

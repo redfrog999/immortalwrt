@@ -202,6 +202,18 @@ define U-Boot/mt7629_rfb
   UBOOT_CONFIG:=mt7629_rfb
 endef
 
+define U-Boot/mt7981_abt_asr3000
+  NAME:=ABT ASR3000
+  BUILD_SUBTARGET:=filogic
+  BUILD_DEVICES:=abt_asr3000
+  UBOOT_CONFIG:=mt7981_abt_asr3000
+  UBOOT_IMAGE:=u-boot.fip
+  BL2_BOOTDEV:=spim-nand
+  BL2_SOC:=mt7981
+  BL2_DDRTYPE:=ddr3
+  DEPENDS:=+trusted-firmware-a-mt7981-spim-nand-ddr3
+endef
+
 define U-Boot/mt7981_cmcc_rax3000m-emmc
   NAME:=CMCC RAX3000M
   BUILD_SUBTARGET:=filogic
@@ -467,6 +479,18 @@ define U-Boot/mt7986_jdcloud_re-cp-03
   DEPENDS:=+trusted-firmware-a-mt7986-emmc-ddr4
 endef
 
+define U-Boot/mt7986_netcore_n60
+  NAME:=Netcore N60
+  BUILD_SUBTARGET:=filogic
+  BUILD_DEVICES:=netcore_n60
+  UBOOT_CONFIG:=mt7986_netcore_n60
+  UBOOT_IMAGE:=u-boot.fip
+  BL2_BOOTDEV:=spim-nand
+  BL2_SOC:=mt7986
+  BL2_DDRTYPE:=ddr3
+  DEPENDS:=+trusted-firmware-a-mt7986-spim-nand-ddr3
+endef
+
 define U-Boot/mt7986_tplink_tl-xdr4288
   NAME:=TP-LINK TL-XDR4288
   BUILD_SUBTARGET:=filogic
@@ -618,6 +642,7 @@ UBOOT_TARGETS := \
 	mt7628_rfb \
 	ravpower_rp-wd009 \
 	mt7629_rfb \
+	mt7981_abt_asr3000 \
 	mt7981_cmcc_rax3000m-emmc \
 	mt7981_cmcc_rax3000m-nand \
 	mt7981_h3c_magic-nx30-pro \
@@ -639,6 +664,7 @@ UBOOT_TARGETS := \
 	mt7986_bananapi_bpi-r3-mini-snand \
 	mt7986_glinet_gl-mt6000 \
 	mt7986_jdcloud_re-cp-03 \
+	mt7986_netcore_n60 \
 	mt7986_tplink_tl-xdr4288 \
 	mt7986_tplink_tl-xdr6086 \
 	mt7986_tplink_tl-xdr6088 \
