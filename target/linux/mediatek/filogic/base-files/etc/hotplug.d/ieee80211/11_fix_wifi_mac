@@ -91,6 +91,7 @@ case "$board" in
 		[ "$PHYNBR" = "0" ] && echo "$addr" > /sys${DEVPATH}/macaddress
 		[ "$PHYNBR" = "1" ] && macaddr_setbit_la $(macaddr_add $addr 1) > /sys${DEVPATH}/macaddress
 		;;
+	cudy,m3000-v1|\
 	cudy,wr3000-v1)
 		addr=$(mtd_get_mac_binary bdinfo 0xde00)
 		# Originally, phy0 is phy1 mac with LA bit set. However, this would conflict
@@ -98,6 +99,10 @@ case "$board" in
 		# mac-address instead.
 		[ "$PHYNBR" = "0" ] && echo "$addr" > /sys${DEVPATH}/macaddress
 		[ "$PHYNBR" = "1" ] && macaddr_setbit_la $(macaddr_add $addr 1) > /sys${DEVPATH}/macaddress
+		;;
+	dlink,aquila-pro-ai-m30-a1)
+		addr=$(mtd_get_mac_binary "Odm" 0x81)
+		[ "$PHYNBR" = "1" ] && macaddr_add $addr 3 > /sys${DEVPATH}/macaddress
 		;;
 	glinet,gl-mt6000)
 		addr=$(mmc_get_mac_binary factory 0x04)
