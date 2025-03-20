@@ -487,7 +487,7 @@ endef
 TARGET_DEVICES += cmcc_xr30-usboffload
 
 
-define Device/cmcc_xr3000m-emmc-usboffload
+define Device/cmcc_xr30-emmc-usboffload
   DEVICE_VENDOR := CMCC
   DEVICE_MODEL := XR30 eMMC USBOFFLOAD
   DEVICE_DTS := mt7981-cmcc-xr30-emmc-usboffload
