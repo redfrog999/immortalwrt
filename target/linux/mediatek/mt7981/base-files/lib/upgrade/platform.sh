@@ -203,6 +203,7 @@ platform_do_upgrade() {
 	*jcg,q30* |\
 	nradio,wt9103 |\
 	cmcc,a10 |\
+        cmcc,xr30 |\
 	cmcc,rax3000m |\
 	h3c,nx30pro |\
 	*konka,komi-a31* |\
@@ -210,6 +211,7 @@ platform_do_upgrade() {
 	*snand*)
 		nand_do_upgrade "$1"
 		;;
+        cmcc,xr30-emmc |\
 	cmcc,rax3000m-emmc |\
 	*emmc*)
 		CI_KERNPART="kernel"
