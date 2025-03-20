@@ -45,6 +45,8 @@ mediatek_setup_interfaces()
 		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 eth1" wan
 		;;
 	*rax3000m-emmc-usboffload |\
+        *xr30-emmc-usboffload |\
+        *xr30-usboffload |\
 	*rax3000m-usboffload)
 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
 		ucidef_add_switch "switch0" \
