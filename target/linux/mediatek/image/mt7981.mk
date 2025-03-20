@@ -468,6 +468,26 @@ define Device/cmcc_rax3000m-emmc
 endef
 TARGET_DEVICES += cmcc_rax3000m-emmc
 
+define Device/cmcc_xr30-nand-ubootmod
+  DEVICE_VENDOR := CMCC
+  DEVICE_MODEL := XR30 NAND version
+  DEVICE_VARIANT := (custom U-Boot layout)
+  DEVICE_DTS := mt7981b-cmcc-xr30-nand-ubootmod
+  DEVICE_DTS_DIR := ../dts
+  DEVICE_PACKAGES := kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 \
+	automount f2fsck mkf2fs
+  SUPPORTED_DEVICES := cmcc,xr30
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 116736k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += cmcc_xr30-nand-ubootmod
+
 define Device/cudy_tr3000-v1
    DEVICE_VENDOR := Cudy
    DEVICE_MODEL := TR3000
