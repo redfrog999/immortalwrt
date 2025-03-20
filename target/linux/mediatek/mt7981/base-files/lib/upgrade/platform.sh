@@ -252,6 +252,7 @@ platform_check_image() {
 	*jcg,q30* |\
 	cmcc,a10 |\
 	cmcc,rax3000m* |\
+        cmcc,xr30* |\
 	h3c,nx30pro |\
 	*konka,komi-a31* |\
 	nradio,wt9103 |\
