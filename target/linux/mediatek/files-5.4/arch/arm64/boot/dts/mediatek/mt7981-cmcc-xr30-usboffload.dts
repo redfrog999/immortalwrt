@@ -2,7 +2,7 @@
 #include "mt7981-cmcc-xr30-usboffload.dtsi"
 
 / {
-	model = "CMCC RX30 Nand Version";
+	model = "CMCC RX30 Nand version";
 	compatible = "cmcc,xr30-usboffload", "mediatek,mt7981";
 
 	chosen {
